@@ -30,13 +30,14 @@ Basierend auf reinem HTML, CSS (SCSS) und JavaScript.
 
 ---
 
+## 👩‍💻 Author / Autorin
+
+Nataliia Tyrsa
+GitHub: nataliia-tyrsa
+
 ## 🖥️ Getting Started / Lokale Ausführung
 
 ```bash
 npm install
 npm start
 
-## 👩‍💻 Author / Autorin
-
-Nataliia Tyrsa
-GitHub: nataliia-tyrsa
