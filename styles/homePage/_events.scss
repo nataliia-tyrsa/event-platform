@@ -1,0 +1,345 @@
+@use '../variables' as *;
+@use '../breakpoints' as *;
+.events {
+  margin: 20px 0 0;
+  &-near {
+    margin-bottom: 65px;
+    &__nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 10px;
+      & img {
+        margin-left: -30px;
+      }
+    }
+    &__title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24.67px;
+    }
+    &__input {
+      width: 164px;
+      color: $teal-green;
+      font-size: 13.71px;
+      font-weight: 600;
+      line-height: 16.45px;
+      padding: 8px 28px 8px 8px;
+      border: none;
+      border-radius: 6px;
+      background: $light-green-background-12;
+    }
+  }
+  &__near-list,
+  &__uncoming-list {
+    margin-bottom: 20px;
+  }
+  &-uncoming__nav {
+    margin-bottom: 17px;
+  }
+  &__list-item {
+    display: flex;
+    gap: 7.5px;
+    padding-top: 10px;
+    border-top: 0.61px solid $border-gray;
+    margin-bottom: 21px;
+    border-radius: 0 0 8px 8px;
+    position: relative; // Online
+    &:hover {
+      transform: 0.5s;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    }
+    &:nth-child(n + 4) {
+      display: none;
+      @include for-medium-up {
+        display: flex;
+      }
+    }
+  }
+  &__date--desktop,
+  &__status--desktop {
+    display: none;
+  }
+  &__date--mobile {
+    color: $dark-yelow;
+    font-size: 8.58px;
+    font-weight: 500;
+    line-height: 12.26px;
+  }
+
+  &__text {
+    padding: 2px 0 0;
+  }
+  &__title {
+    font-size: 9.64px;
+    font-weight: 500;
+    line-height: 14.46px;
+  }
+  &__location {
+    color: $grey-black;
+    font-size: 8.44px;
+    line-height: 12.05px;
+    margin-bottom: 2px;
+  }
+  &__img {
+    position: relative;
+    min-width: 98px;
+    height: 55px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include for-medium-up {
+      width: 272px;
+      height: 153px;
+    }
+  }
+
+  &__online {
+    display: none;
+    position: relative;
+    right: -10px;
+    font-size: 7.3px;
+    font-weight: 500;
+    line-height: 9.73px;
+    color: $grey-black;
+
+    &--mobile {
+      display: block;
+      margin-bottom: 18.5px;
+
+      &::after {
+        position: absolute;
+        content: url(../assets/icon/camera.svg);
+        left: -10px;
+        bottom: -1px;
+      }
+    }
+  }
+  &__link--mobile {
+    color: $teal-green;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 9.73px;
+  }
+  &__link--desktop {
+    display: none;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: $teal-green;
+      bottom: -3px;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+    &:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+
+  &__status--mobile {
+    font-size: 8.44px;
+    line-height: 12.05px;
+    color: $grey-black;
+  }
+
+  @include for-small-up {
+    &__img {
+      min-width: 196px;
+      height: 110px;
+    }
+    &__status--mobile,
+    &__location,
+    &__date--mobile {
+      font-size: 12px;
+    }
+    &__location {
+      margin-bottom: 40px;
+    }
+    &__title {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+    &__online {
+      display: block;
+      font-size: 12px;
+      padding: 3px 8px 3px 24px;
+      background: $white;
+      border-radius: 4px;
+      top: 5px;
+      left: 10px;
+      width: fit-content;
+      height: fit-content;
+
+      &--mobile {
+        display: none;
+        margin-bottom: 18.5px;
+      }
+      &::after {
+        position: absolute;
+        content: url(../assets/icon/cameraForDesctop.svg);
+        left: 5px;
+        top: 2px;
+      }
+    }
+  }
+
+  @include for-medium-up {
+    margin: auto auto;
+    &__online {
+      line-height: 16px;
+      padding: 2px 8px 2px 24px;
+
+      &::after {
+        left: 6px;
+        top: 3.3px;
+      }
+    }
+    .events-near {
+      &__title {
+        font-size: 28px;
+        line-height: 36px;
+      }
+      &__input {
+        width: 240px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+    &-near {
+      & img {
+        margin-left: -45px;
+      }
+
+      &__nav {
+        gap: 15px;
+        margin: 0;
+      }
+      &__container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+        justify-content: space-between;
+      }
+    }
+    &-uncoming__nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__link--desktop {
+      display: block;
+      color: $teal-green;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+    &-near,
+    &__uncoming-online {
+      margin-bottom: 40px;
+    }
+    &__date--mobile,
+    &__status--mobile,
+    &__link--mobile {
+      display: none;
+    }
+    &__date--desktop,
+    &__status--desktop {
+      display: flex;
+      gap: 42px;
+      margin-left: 26px;
+    }
+    &__date--desktop {
+      font-size: 14px;
+      line-height: 20px;
+      color: $standart-black;
+    }
+    &__status--desktop {
+      & div:first-child {
+        position: relative;
+        &::before {
+          position: absolute;
+          content: url(../assets/icon/ok.svg);
+          left: -27px;
+        }
+      }
+      & div:last-child {
+        position: relative;
+        &::before {
+          position: absolute;
+          content: url(../assets/icon/ticket.svg);
+          left: -27px;
+          bottom: -5px;
+        }
+      }
+    }
+    &__list-item {
+      flex-direction: column;
+      height: 399px;
+      width: 272px;
+      margin: 0;
+      padding: 0;
+      gap: 0;
+      border: none;
+      display: flex;
+      &:hover {
+        transform: 0.5s;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+    }
+    &__text {
+      position: relative;
+      margin-bottom: 12px;
+      &::after {
+        position: absolute;
+        content: url(../assets/icon/calendar.svg);
+        bottom: -3px;
+        left: -2px;
+      }
+    }
+    &__img {
+      width: 272px;
+      height: 153px;
+      position: relative;
+    }
+    &__title {
+      margin-top: 12px;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    &__location {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+    }
+    &__uncoming-list,
+    &__near-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+  }
+  @include for-large-up {
+    &__near-list,
+    &__uncoming-list {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  @include for-xl-up {
+    &__near-list,
+    &__uncoming-list {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}

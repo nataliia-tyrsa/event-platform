@@ -1,0 +1,85 @@
+@use '../breakpoints' as *;
+@use '../variables' as *;
+
+.invite {
+  width: 100vw;
+  text-align: center;
+  margin-left: -15px;
+  margin-top: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  background: $light-green-background;
+  border-radius: 8px;
+
+  &__btn {
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    background: $cherry;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 67px;
+    &:hover {
+      background-color: $white;
+      color: $cherry;
+      font-weight: 500;
+      padding: 6px 65px;
+      border: 2px solid $cherry;
+    }
+  }
+
+  &__title {
+    text-align: start;
+    font-size: 20px;
+    line-height: 36px;
+  }
+  &__description {
+    color: $black;
+    text-align: start;
+    line-height: 24px;
+    font-size: 12px;
+    margin-bottom: 22px;
+  }
+  &__right-content {
+    display: none;
+  }
+  &__right-content--mobile {
+    margin: 0 auto 6px auto;
+    max-width: 341px;
+    min-height: 136px;
+    background: center / contain no-repeat url(../assets/image/hands.png);
+  }
+  @include for-medium-up {
+    text-align: start;
+    width: auto;
+    margin-left: auto;
+    margin-top: 40px;
+    padding: 10px auto;
+    &__right-content {
+      display: block;
+    }
+    &__right-content--mobile {
+      display: none;
+    }
+    &__title {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    &__description {
+      color: $standart-black;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+  }
+  @include for-large-up {
+    padding: 15px 56px;
+    gap: 75px;
+    &__right-content {
+      display: block;
+    }
+  }
+  @include for-xl-up {
+    padding: 20px 56px;
+  }
+}

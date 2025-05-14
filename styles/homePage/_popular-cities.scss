@@ -1,0 +1,96 @@
+@use '../breakpoints' as *;
+@use '../variables' as *;
+
+.popular-cities {
+  margin-bottom: 43px;
+  &__text-container {
+    margin-bottom: 10px;
+  }
+  &__title {
+    font-size: 20px;
+    line-height: 36px;
+  }
+  &__description {
+    color: $grey-black;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    text-align: center;
+
+    &-item--desktop {
+      display: none;
+    }
+    & img {
+      width: 154px;
+    }
+    & div {
+      margin-bottom: 18px;
+    }
+    & span {
+      font-size: 14.94px;
+      font-weight: 600;
+      line-height: 20.92px;
+    }
+  }
+  @include for-small-up {
+    &__list {
+      & img {
+        width: 180px;
+      }
+    }
+  }
+  @include for-medium-up {
+    margin-bottom: 64px;
+    &__title {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    &__description {
+      font-size: 16px;
+    }
+    &__list {
+      row-gap: 30px;
+      & img {
+        width: 205px;
+      }
+      & span {
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+  }
+  @include for-large-up {
+    margin-bottom: 64px;
+    &__list {
+      grid-template-columns: repeat(5, 1fr);
+      &-item--desktop {
+        display: block;
+      }
+      & img {
+        width: 154px;
+      }
+      & div {
+        margin-bottom: 24px;
+      }
+    }
+    &__title {
+      margin-bottom: 16px;
+    }
+    &__text-container {
+      margin-bottom: 28px;
+    }
+  }
+  @include for-xl-up {
+    &__list {
+      gap: 42px;
+      & img {
+        width: 205px;
+      }
+    }
+  }
+}

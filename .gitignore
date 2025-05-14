@@ -1,0 +1,13 @@
+.DS_Store
+
+
+dist/
+dist_styles/
+*.map
+
+
+node_modules/
+
+
+*.log
+.env

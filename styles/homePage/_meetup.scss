@@ -1,0 +1,131 @@
+@use '../breakpoints' as *;
+@use '../variables' as *;
+
+.meetup {
+  margin-bottom: 17px;
+  &__title {
+    font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 18px;
+  }
+  &-container {
+    &__title {
+      font-size: 12px;
+      line-height: 14.93px;
+      margin-bottom: 10px;
+    }
+    &__description {
+      font-size: 10px;
+      line-height: 14.93px;
+      margin-bottom: 10px;
+    }
+  }
+  &__container {
+    display: flex;
+    align-items: start;
+    padding: 20px 0 15px 15px;
+    gap: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    background-color: $light-green-background;
+    &-text {
+      width: 236px;
+      & a {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 14.93px;
+        color: $teal-green;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          border-radius: 4px;
+          background-color: $teal-green;
+          bottom: -3px;
+          left: 0;
+          transform-origin: right;
+          transform: scaleX(0);
+          transition: transform 0.3s ease-in-out;
+        }
+        &:hover::before {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+      }
+    }
+    &-img {
+      margin-top: -8px;
+      transform: scale(0.6);
+    }
+  }
+  @include for-small-up {
+    &__container {
+      gap: 24px;
+      margin-bottom: 32px;
+      &-text {
+        width: auto;
+        & a {
+          font-size: 12px;
+        }
+      }
+      &-img {
+        transform: scale(1);
+        margin-top: 0;
+      }
+    }
+    &-container {
+      &__title {
+        font-size: 16px;
+      }
+      &__description {
+        font-size: 12px;
+      }
+    }
+  }
+  @include for-medium-up {
+    margin-bottom: 64px;
+    &__title {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    &__container {
+      padding: 32px 24px 24px 24px;
+      &-text {
+        width: auto;
+        & a {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+    &-container {
+      &__title {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 16px;
+      }
+      &__description {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+  @include for-large-up {
+    margin-bottom: 64px;
+    &__container {
+      margin-bottom: 0;
+      width: 100%;
+      &-text {
+        max-width: 380px;
+      }
+    }
+    &__flex {
+      display: flex;
+      gap: 32px;
+    }
+  }
+}

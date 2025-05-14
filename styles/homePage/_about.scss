@@ -1,0 +1,104 @@
+@use '../variables' as *;
+@use '../breakpoints' as *;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  &__join-btn {
+    display: none;
+    width: fit-content;
+    margin-top: 24px;
+    padding: 8px 16px;
+    background: $teal-green;
+    border-radius: 8px;
+    border: none;
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    transition: all 400ms ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__title {
+    font-size: 25px;
+    line-height: 30.5px;
+    margin: 30px 0 20px;
+  }
+  &__text {
+    color: $black;
+    font-size: 12px;
+    line-height: 24px;
+  }
+  &__left-conteiner {
+    max-width: 600px;
+  }
+  &__right-conteiner {
+    text-align: center;
+    margin: 0 89px;
+    max-width: 379px;
+    max-height: 269px;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+@include for-medium-up {
+  .about {
+    flex-direction: row;
+    margin: 30px auto 70px;
+    padding: 0;
+
+    &__left-conteiner {
+      max-width: 330px;
+    }
+
+    &__right-conteiner {
+      margin: 0;
+    }
+
+    &__title {
+      margin-top: 0;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 46px;
+    }
+    &__text {
+      color: $standart-black;
+      font-size: 16px;
+    }
+    &__join-btn {
+      display: block;
+    }
+  }
+}
+@include for-large-up {
+  .about {
+    align-items: start;
+    margin: 70px auto 122px;
+    &__right-conteiner {
+      margin: 0 45px;
+    }
+    &__title {
+      font-size: 42px;
+      line-height: 52px;
+    }
+  }
+}
+@include for-xl-up {
+  .about {
+    margin: 70px auto 122px;
+    &__left-conteiner {
+      max-width: 600px;
+    }
+
+    &__right-conteiner {
+      margin: 0;
+    }
+  }
+}

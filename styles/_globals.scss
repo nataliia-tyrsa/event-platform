@@ -1,0 +1,20 @@
+@use './breakpoints' as *;
+@use './variables' as *;
+
+body {
+  font-family: Roboto;
+  color: $standart-black;
+}
+main {
+  margin: 0 15px;
+  @include for-medium-up {
+    margin: auto;
+    max-width: 580px;
+  }
+  @include for-large-up {
+    max-width: 890px;
+  }
+  @include for-xl-up {
+    max-width: 1196px;
+  }
+}

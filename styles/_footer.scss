@@ -1,0 +1,144 @@
+@use './variables' as *;
+@use './breakpoints' as *;
+
+.footer {
+  background: $standart-black;
+  padding: 20px 15px 36px;
+
+  #getStarted {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    color: $white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px 14px;
+    border: 2px solid $white;
+    border-radius: 6px;
+    &:hover {
+      color: $standart-black;
+      background: $white;
+    }
+  }
+  & a {
+    color: $footer-gray;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  & p {
+    color: $gray-background;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  &__title {
+    color: $gray-background;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 10px 16px 35px 0;
+    border-bottom: 1px solid $grey-black;
+  }
+  &__other-links {
+    & p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    & a {
+      display: none;
+    }
+  }
+  &__get-started {
+    display: flex;
+    margin-bottom: 34px;
+  }
+  &__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    margin-bottom: 21px;
+    & li {
+      margin-bottom: 7px;
+      & a:hover {
+        color: $white;
+      }
+    }
+    & p {
+      margin-bottom: 7px;
+    }
+  }
+  &__social-media p {
+    margin-bottom: 12px;
+  }
+  @include for-small-up {
+    &__links {
+      column-gap: 10;
+    }
+  }
+  @include for-medium-up {
+    padding: 24px 0 40px;
+    &__container {
+      margin: auto;
+      max-width: 580px;
+    }
+    &__get-started {
+      border-bottom: 1px solid $grey-black;
+    }
+    &__title {
+      border: none;
+      padding-right: 36px;
+    }
+    &__other-links {
+      display: flex;
+      gap: 18px;
+      & a {
+        display: block;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+  @include for-large-up {
+    &__container {
+      max-width: 890px;
+    }
+    &__other-links {
+      gap: 24px;
+    }
+  }
+  @include for-xl-up {
+    &__container {
+      max-width: 1196px;
+    }
+  }
+}
+
+.social-media_links {
+  margin-bottom: 46px;
+
+  #tiktok {
+    transform: scale(1.4);
+  }
+  &-left img {
+    width: 25px;
+    height: 25px;
+    margin-right: 35px;
+  }
+  &-right {
+    display: none;
+  }
+  @include for-medium-up {
+    display: flex;
+    justify-content: space-between;
+
+    &-left img {
+      margin-right: 28px;
+    }
+    &-right {
+      display: block;
+      display: flex;
+      gap: 25px;
+    }
+  }
+}
