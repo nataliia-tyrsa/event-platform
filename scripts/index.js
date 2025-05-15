@@ -1,4 +1,4 @@
-import { fetchDatas } from '../getEway/eventsGateway.js'
+import { fetchDatas } from '../data/fetchData.js'
 
 renderPage()
 

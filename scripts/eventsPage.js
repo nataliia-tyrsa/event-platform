@@ -1,4 +1,5 @@
-import { eventsStore } from '../getEway/events.js'
+import { eventsStore } from '../data/eventsStore.js';
+
 const closeMapBtn = document.getElementById('closeMapBtn')
 const allEventList = document.querySelector('.all-events__list')
 const filterContainer = document.querySelector('.all-events__filter')
